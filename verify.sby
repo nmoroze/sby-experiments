@@ -1,0 +1,15 @@
+[options]
+mode prove
+depth 1
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -sv verify.sv
+read_verilog prim_fifo_sync.v
+prep -top verify
+
+[files]
+verify.sv
+prim_fifo_sync.v
